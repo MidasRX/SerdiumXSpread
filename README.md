@@ -84,6 +84,18 @@ This tool is intended for:
 - **Status Rotator** - Rotate between different status types
 - **Nitro Checker** - Validate Discord Nitro gift codes
 - **Mass DM** - Send direct messages to all friends
+- **MSAIADS** - AI-powered ad spammer with natural conversation
+  - Support for OpenAI (ChatGPT), Anthropic (Claude), and Google (Gemini)
+  - Multiple personas (Friendly Gamer Friend, Professional Ad Creator)
+  - AI generates natural, human-like messages based on your prompt
+  - Can target DMs, servers, or both
+  - Customizable speed control
+- **MSAIADS** - AI-powered ad spammer with natural conversation
+  - Support for OpenAI (ChatGPT), Anthropic (Claude), and Google (Gemini)
+  - Multiple personas (Friendly Gamer Friend, Professional Ad Creator)
+  - AI generates natural, human-like messages based on your prompt
+  - Can target DMs, servers, or both
+  - Customizable speed control
 
 ### Telegram Tools
 
@@ -157,7 +169,20 @@ pip install -r requirements.txt
 
 ### Step 3: Configure
 
-1. Edit `config.json` to add any required API keys not mandatory you can skip that lmao (its only for ai bot feature that i will add later 
+1. Edit `config.json` to add AI API keys (required for MSAIADS feature):
+   ```json
+   {
+       "api_keys": {
+           "openai_api_key": "sk-...",
+           "claude_api_key": "sk-ant-...",
+           "gemini_api_key": "..."
+       }
+   }
+   ```
+   **Get API Keys:**
+   - **OpenAI**: https://platform.openai.com/api-keys
+   - **Claude**: https://console.anthropic.com/
+   - **Gemini**: https://makersuite.google.com/app/apikey
 2. Place your tokens in `Input/tokens.txt` (one per line) (optional)
 3. Place your proxies in `Input/proxies.txt` (one per line, format: `ip:port`) (optional)
 
@@ -230,6 +255,49 @@ Many functions support two token input methods:
 
 1. **From File** - Load tokens from `Input/tokens.txt`
 2. **Manual Input** - Enter tokens directly when prompted
+
+### MSAIADS - AI-Powered Ad Spammer
+
+MSAIADS uses artificial intelligence to create natural, human-like ad messages. Here's how to use it:
+
+1. **Get an AI API Key:**
+   - Choose from OpenAI (ChatGPT), Anthropic (Claude), or Google (Gemini)
+   - Get your API key from the respective provider's website:
+     - **OpenAI**: https://platform.openai.com/api-keys
+     - **Claude**: https://console.anthropic.com/
+     - **Gemini**: https://makersuite.google.com/app/apikey
+   - Add it to `config.json` under `api_keys`:
+     ```json
+     {
+         "api_keys": {
+             "openai_api_key": "sk-...",
+             "claude_api_key": "sk-ant-...",
+             "gemini_api_key": "..."
+         }
+     }
+     ```
+
+2. **Select a Persona:**
+   - **Friendly Gamer Friend**: Acts like a real friend trying to get friends to try a game. Uses casual language and gaming slang.
+   - **Professional Ad Creator**: A professional marketer who explains what they're doing when asked. Answers questions clearly and professionally.
+
+3. **Enter Your Message/Prompt:**
+   - Tell the AI what you want to promote or mention
+   - The AI will adapt this into natural, conversational messages
+   - Example: "Try this amazing new game called GameName, it's really fun and we should play together!"
+
+4. **Choose Target:**
+   - **DMs only**: Send to all direct message channels
+   - **Servers only**: Send to all channels in all servers
+   - **Both**: Send to both DMs and servers
+
+5. **How It Works:**
+   - The AI generates unique, natural-sounding messages for each recipient
+   - Each message is adapted from your base prompt but sounds authentic and personal
+   - The selected persona maintains consistency in tone and style
+   - Messages are generated on-the-fly, so each one may be slightly different while maintaining your core message
+
+**Note:** The AI generates messages dynamically, making each message unique while staying true to your promotional content.
 
 ### Input Files
 

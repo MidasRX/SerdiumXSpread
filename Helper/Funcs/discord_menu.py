@@ -2,6 +2,7 @@ from Helper import *
 from Helper.Common.utils import *
 from Helper.Funcs.discord_spreaders import *
 from Helper.Funcs.discord_advanced import *
+from Helper.Funcs.msaiads import msaiads
 import Helper
 
 def discord_menu():
@@ -19,6 +20,7 @@ def discord_menu():
                                                                         {color}<<{Fore.RESET}12{color}>> [{Fore.RESET}Mass DM{color}]
                                                                         {color}<<{Fore.RESET}13{color}>> [{Fore.RESET}MTSV1 - Marketing Tools{color}]
                                                                         {color}<<{Fore.RESET}14{color}>> [{Fore.RESET}Transfer Ownership{color}]
+                                                                        {color}<<{Fore.RESET}15{color}>> [{Fore.RESET}MSAIADS - AI Ad Spammer{color}]
                                                                         {color}<<{Fore.RESET}0{color}>>  [{Fore.RESET}Back to Main Menu{color}]
     """)
     choice = input(f"{Fore.RESET}[{color}>{Fore.RESET}] Choice: ")
@@ -36,7 +38,8 @@ def discord_menu():
         "11": discord_token_onliner,
         "12": discord_mass_dm,
         "13": discord_mtsv1,
-        "14": discord_transfer_ownership
+        "14": discord_transfer_ownership,
+        "15": discord_msaiads
     }
     if choice == "0":
         return  # Return to main menu
@@ -689,4 +692,9 @@ def discord_transfer_ownership():
     transfer_ownership_all_servers(token, new_owner_id)
     
     input(f"{Fore.RESET}[{color}>{Fore.RESET}] Press Enter to continue...")
+
+def discord_msaiads():
+    color = Helper.color
+    from Helper.Funcs.msaiads import msaiads
+    msaiads()
 
